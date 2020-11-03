@@ -8,4 +8,11 @@ function makeGrid(rows, cols){
         container.appendChild(cell).className = "grid-item";
     }
 }
-makeGrid(16,16);
+makeGrid(100,100);
+
+const cells = document.querySelectorAll('.grid-item');
+cells.forEach((div) => {
+    div.addEventListener('mouseenter', ()=>{
+        div.style.cssText = "background-color: black";
+    });
+});
