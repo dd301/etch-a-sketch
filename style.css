@@ -7,9 +7,13 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-cols), 1fr);
   grid-template-rows: repear(var(--grid-rows), 1fr);
+  width: 90%;
+  height: 90%;
+  border: 1px solid black;
 }
 
 .grid-item{
-  width:1vw;
-  height:1vw; 
+  width:1em;
+  height:1em;
+  border: 1px solid black; 
 }
