@@ -1,5 +1,5 @@
+const container = document.querySelector('#container');
 function makeGrid(rows, cols){
-    const container = document.querySelector('#container');
     container.style.setProperty('--grid-cols', cols);
     container.style.setProperty('--grid-rows', rows);
     for(let i =0 ; i<(rows*cols);i++){
@@ -9,20 +9,24 @@ function makeGrid(rows, cols){
 }
 makeGrid(100,100);
 
+
+
+const button = document.querySelector('#clearer');
+button.addEventListener('click', ()=>{
+    while (container.hasChildNodes()){
+        container.removeChild(container.firstChild);
+    }
+    let gridNumber = +prompt('Please enter the number of grid squares', 'Must be less than or equal to 100 to work');
+    if(gridNumber<=100){
+        makeGrid(gridNumber, gridNumber);
+    }
+});
+
 const cells = document.querySelectorAll('.grid-item');
 cells.forEach((div) => {
     div.addEventListener('mouseenter', ()=>{
         div.style.cssText = "background-color: black";
     });
-});
-let gridNumber;
-const button = document.querySelector('#clearer');
-button.addEventListener('click', ()=>{
-    cells.forEach((div)=>{
-        div.style.cssText="background-color: white";    
-    });
-    gridNumber = +prompt('Please enter the number of grid squares');
-    makeGrid(gridNumber, gridNumber);
 });
 
 
