@@ -6,6 +6,12 @@ function makeGrid(rows, cols){
         let cell = document.createElement('div');
         container.appendChild(cell).className = "grid-item";
     }
+    let cells = document.querySelectorAll('.grid-item');
+    cells.forEach((div) => {
+    div.addEventListener('mouseenter', ()=>{
+        div.style.cssText = "background-color: black";
+    });
+});
 }
 makeGrid(100,100);
 
@@ -22,11 +28,6 @@ button.addEventListener('click', ()=>{
     }
 });
 
-const cells = document.querySelectorAll('.grid-item');
-cells.forEach((div) => {
-    div.addEventListener('mouseenter', ()=>{
-        div.style.cssText = "background-color: black";
-    });
-});
+
 
 
